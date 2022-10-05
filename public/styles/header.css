@@ -1,0 +1,9 @@
+.my-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 520px;
+  background-color: #eb9484;
+  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+}
