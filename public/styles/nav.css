@@ -1,5 +1,6 @@
 
-nav{
+.top-nav{
+  position: fixed;
   display: flex;
   color: #FFFFFF;
   background-color: #4056a1;
@@ -10,16 +11,16 @@ nav{
   align-items: center;
 }
 
-nav > * {
+.top-nav > * {
   margin-left: 1.5em;
   margin-right: 1.5em;
 }
-span{
+#main-title{
   flex-direction: column;
   font-family: 'Bungee', sans-serif;
   font-size: 48px;
 }
-div{
+.top-nav > div{
   display: flex;
   flex-direction: column;
   align-items: center;
