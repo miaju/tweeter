@@ -2,14 +2,10 @@
   display: flex;
   width: 100%;
   justify-content: center;
-}
-#new-tweet-title {
-  justify-content: flex-start;
-  margin-right: 10px;
+  flex-direction: column;
 }
 
-
-.new-tweet > form > div{
+.new-tweet > form > footer{
   display: flex;
   justify-content: space-between;
 }
@@ -22,19 +18,27 @@
   justify-content: flex-start;
   align-items: center;
   border: none;
-  font-size: 80%;
+  font-size: larger;
 }
 
 .counter{
   font-family: 'Bungee', sans-serif;
 }
 
+label[for="tweet-text"] {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
 #tweet-text {
   padding:10px;
   margin:10px 0;
   border:0; 
-  border-bottom:1px solid #545149; 
-  width: 50vw;
+  border-bottom:5px  solid #545149;
+  border-radius: 3px; 
+  width: 90vw;
+  height: 48px;
   resize: vertical;
   background-color: #f4f1ec;
 }
