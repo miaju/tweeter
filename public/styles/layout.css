@@ -32,6 +32,7 @@ body {
 main{
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   justify-self: center;
   width: 90vw;
