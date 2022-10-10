@@ -45,7 +45,6 @@ $(document).ready(function() {
 
   const loadTweets = function() {
     $.get("/tweets", function(data) {
-      console.log(data);
       renderTweets(data);
     });
   };
@@ -54,8 +53,18 @@ $(document).ready(function() {
 
   $newTweet.submit(function(event) {
     event.preventDefault();
-    const serialized = $(event.target).serialize();
-    $.post('/tweets', serialized);
+    const chars = Number($(event.target.counter).val());
+    if (chars === 140) {
+      alert("No tweet text entered");
+      event.stopImmediatePropagation();
+    } else if (chars < 0) {
+      alert("Tweet over 140 characters!");
+      event.stopImmediatePropagation();
+    } else {
+      const serialized = $(event.target).serialize();
+      $.post('/tweets', serialized);
+    }
+    
   });
 
   loadTweets();
