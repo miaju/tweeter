@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 /* eslint-disable no-undef */
 $(document).ready(function() {
   
@@ -66,6 +67,14 @@ $(document).ready(function() {
   ];
   
   renderTweets(data);
+
+  const $newTweet = $('.new-tweet');
+
+  $newTweet.submit(function(event) {
+    event.preventDefault();
+    const serialized = $(event.target).serialize();
+    $.post('/tweets', serialized);
+  });
   
 });
 
