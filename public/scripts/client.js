@@ -7,6 +7,12 @@
 
 /* eslint-disable no-undef */
 $(document).ready(function() {
+
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
   
   const createTweetElement = function(tweetData) {
 
@@ -22,7 +28,7 @@ $(document).ready(function() {
         <p id="username">${tweetData.user.handle}</p>
       </header>
       <p>
-        ${tweetData.content.text}
+        ${escape(tweetData.content.text)}
       </p>
       <footer>
         <p id="timestamp">${timestamp}</p>
@@ -38,8 +44,9 @@ $(document).ready(function() {
   };
   
   const renderTweets = function(tweets) {
+    $('#tweets-container').empty();
     for (const tweet of tweets) {
-      $('#tweets-container').append(createTweetElement(tweet));
+      $('#tweets-container').prepend(createTweetElement(tweet));
     }
   };
 
@@ -55,7 +62,7 @@ $(document).ready(function() {
     event.preventDefault();
     const chars = Number($(event.target.counter).val());
     if (chars === 140) {
-      alert("No tweet text entered");
+      alert("No tweet text entered!");
       event.stopImmediatePropagation();
     } else if (chars < 0) {
       alert("Tweet over 140 characters!");
@@ -63,8 +70,8 @@ $(document).ready(function() {
     } else {
       const serialized = $(event.target).serialize();
       $.post('/tweets', serialized);
+      loadTweets();
     }
-    
   });
 
   loadTweets();
