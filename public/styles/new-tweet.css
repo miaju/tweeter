@@ -49,3 +49,21 @@ label[for="tweet-text"] {
   background-color: #f4f1ec;
 }
 
+.alert{
+  border: 5px solid red;
+  border-radius: 3px; 
+  color: red;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  opacity: 0.75;
+}
+
+.alert > * {
+  margin: 10px
+}
+
+.alert.hidden{
+  display: none;
+}

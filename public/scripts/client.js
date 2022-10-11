@@ -61,16 +61,22 @@ $(document).ready(function() {
   $newTweet.submit(function(event) {
     event.preventDefault();
     const chars = Number($(event.target.counter).val());
+    const $alert = $(this).find(".alert");
     if (chars === 140) {
-      alert("No tweet text entered!");
+      $alert.removeClass("hidden");
+      $alert.find('div').text("No tweet text entered!");
       event.stopImmediatePropagation();
     } else if (chars < 0) {
-      alert("Tweet over 140 characters!");
+      $alert.removeClass("hidden");
+      $alert.find('div').text("Tweet over 140 characters!");
       event.stopImmediatePropagation();
     } else {
+      $alert.addClass("hidden");
       const serialized = $(event.target).serialize();
-      $.post('/tweets', serialized);
-      loadTweets();
+      $.post('/tweets', serialized, res => {
+        loadTweets();
+      });
+      
     }
   });
 
