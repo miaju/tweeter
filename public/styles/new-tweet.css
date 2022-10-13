@@ -1,6 +1,6 @@
 .new-tweet{
   display: flex;
-  width: 100%;
+  width: 90%;
   justify-content: center;
   flex-direction: column;
 }
@@ -43,10 +43,10 @@ label[for="tweet-text"] {
   border:0; 
   border-bottom:5px  solid #545149;
   border-radius: 3px; 
-  width: 90vw;
-
+  width: 100%;
   resize: vertical;
   background-color: #f4f1ec;
+  outline: none;
 }
 
 .alert{
@@ -57,7 +57,7 @@ label[for="tweet-text"] {
   display: flex;
   justify-content: space-between;
   margin: 10px;
-  opacity: 0.75;
+  transition:  font-size 0.5s 
 }
 
 .alert > * {
@@ -65,5 +65,9 @@ label[for="tweet-text"] {
 }
 
 .alert.hidden{
-  display: none;
+  visibility: hidden;
+  font-size: 0px;
+  border: 0px;
+  margin: 0px;
+  
 }

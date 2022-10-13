@@ -1,0 +1,44 @@
+@media only screen and (min-width: 1024px) {
+  body > div{
+    display: flex;
+    flex-direction: row;
+    margin-top: 140px;
+    width: 100%;
+    justify-content: space-around;
+
+  }
+  .my-profile {
+    width: 40%;
+    position: sticky;
+    top: 140px;
+  }
+
+  main{
+    width: 40%;
+
+  }
+
+  .new-tweet{
+    width: 100%
+  }
+  
+}
+
+@media only screen and (max-width: 1023px) {
+
+  .top-nav {
+    background-color: #eb9484;
+    background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+    position: fixed;
+
+  }
+
+  
+
+  .container{
+
+    width: 100%;
+
+  }
+  
+}

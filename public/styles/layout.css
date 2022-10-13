@@ -25,6 +25,10 @@ body {
   
 }
 
+body > div {
+  width: 100%;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
@@ -35,6 +39,7 @@ main{
   flex-direction: column;
   justify-content: center;
   justify-self: center;
-  width: 90vw;
+  align-items: center;
+  width: 90%;
 
 }

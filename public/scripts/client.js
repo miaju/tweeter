@@ -74,12 +74,14 @@ $(document).ready(function() {
       $alert.addClass("hidden");
       const serialized = $(event.target).serialize();
       $.post('/tweets', serialized, res => {
+        $(event.target).parent().find('#tweet-text').val('');
+        $(event.target.counter).val('140');
         loadTweets();
       });
       
     }
   });
-
+ 
   loadTweets();
   
 });
