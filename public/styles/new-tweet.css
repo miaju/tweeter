@@ -1,19 +1,18 @@
-.new-tweet{
+.new-tweet {
   display: flex;
   width: 90%;
   justify-content: center;
   flex-direction: column;
 }
 
-.new-tweet > form > footer{
+.new-tweet>form>footer {
   display: flex;
   justify-content: space-between;
 }
 
-
-#new-tweet-btn{
-  font-family: 'Bungee', sans-serif;
-  color: #FFFFFF;
+#new-tweet-btn {
+  font-family: "Bungee", sans-serif;
+  color: #ffffff;
   background-color: #4056a1;
   justify-content: flex-start;
   align-items: center;
@@ -22,13 +21,13 @@
   font-size: 24px;
 }
 
-#new-tweet-btn:hover{
+#new-tweet-btn:hover {
   background-color: #2f3f76;
   font-size: 26px;
 }
 
-.counter{
-  font-family: 'Bungee', sans-serif;
+.counter {
+  font-family: "Bungee", sans-serif;
 }
 
 label[for="tweet-text"] {
@@ -38,36 +37,35 @@ label[for="tweet-text"] {
 }
 
 #tweet-text {
-  padding:10px;
-  margin:10px 0;
-  border:0; 
-  border-bottom:5px  solid #545149;
-  border-radius: 3px; 
+  padding: 10px;
+  margin: 10px 0;
+  border: 0;
+  border-bottom: 5px solid #545149;
+  border-radius: 3px;
   width: 100%;
   resize: vertical;
   background-color: #f4f1ec;
   outline: none;
 }
 
-.alert{
+.alert {
   border: 5px solid red;
-  border-radius: 3px; 
+  border-radius: 3px;
   color: red;
   font-weight: 600;
   display: flex;
   justify-content: space-between;
   margin: 10px;
-  transition:  font-size 0.5s 
+  transition: font-size 0.5s;
 }
 
-.alert > * {
-  margin: 10px
+.alert>* {
+  margin: 10px;
 }
 
-.alert.hidden{
+.alert.hidden {
   visibility: hidden;
   font-size: 0px;
   border: 0px;
   margin: 0px;
-  
 }

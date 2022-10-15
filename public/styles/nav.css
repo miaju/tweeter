@@ -1,8 +1,7 @@
-
-.top-nav{
+.top-nav {
   position: fixed;
   display: flex;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #4056a1;
   height: 120px;
   width: 100vw;
@@ -11,16 +10,18 @@
   align-items: center;
 }
 
-.top-nav > * {
+.top-nav>* {
   margin-left: 1.5em;
   margin-right: 1.5em;
 }
-#main-title{
+
+#main-title {
   flex-direction: column;
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
   font-size: 48px;
 }
-.top-nav > div{
+
+.top-nav>div {
   display: flex;
   flex-direction: column;
   align-items: center;

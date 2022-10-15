@@ -1,9 +1,8 @@
 /* eslint-disable no-undef */
 $(document).ready(function() {
-  
   let chars = 0;
 
-  $('#tweet-text').on('input', function() {
+  $("#tweet-text").on("input", function() {
     chars = $(this).val().length;
     let charsLeft = 140 - chars;
 
@@ -14,7 +13,5 @@ $(document).ready(function() {
     }
 
     $(this).parent().find(".counter").html(charsLeft);
-
   });
-
 });
