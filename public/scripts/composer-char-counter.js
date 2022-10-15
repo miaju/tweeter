@@ -1,4 +1,6 @@
 /* eslint-disable no-undef */
+
+// displays the length of the text in the new tweet box, turns red if the length is over 140 chars
 $(document).ready(function() {
   let chars = 0;
 

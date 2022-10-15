@@ -47,6 +47,7 @@
     </div>
   </nav>
   <div>
+    <!-- Header for profile -->
     <header class="my-profile">
       <div>
         <img src="/images/profile-hex.png" />
@@ -60,22 +61,24 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <!-- Error message -->
         <div class="alert hidden">
           <i class="fa-solid fa-triangle-exclamation"></i>
           <div>ERROR</div>
           <i class="fa-solid fa-triangle-exclamation"></i>
         </div>
+        <!-- Compose new tweet box -->
         <form method="post" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
-
           <textarea name="text" id="tweet-text"></textarea>
-
           <footer>
             <button id="new-tweet-btn" type="submit">Tweet</button>
+            <!-- Counter for length of new tweet -->
             <output name="counter" class="counter" for="tweet-text">140</output>
           </footer>
         </form>
       </section>
+      <!-- Posted tweets container -->
       <section id="tweets-container"></section>
     </main>
   </div>
