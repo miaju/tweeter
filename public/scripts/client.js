@@ -4,18 +4,15 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
 /* eslint-disable no-undef */
 $(document).ready(function() {
-
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-  
-  const createTweetElement = function(tweetData) {
 
+  const createTweetElement = function(tweetData) {
     const timestamp = timeago.format(tweetData.created_at);
 
     const tweet = `
@@ -42,11 +39,11 @@ $(document).ready(function() {
     `;
     return tweet;
   };
-  
+
   const renderTweets = function(tweets) {
-    $('#tweets-container').empty();
+    $("#tweets-container").empty();
     for (const tweet of tweets) {
-      $('#tweets-container').prepend(createTweetElement(tweet));
+      $("#tweets-container").prepend(createTweetElement(tweet));
     }
   };
 
@@ -55,8 +52,8 @@ $(document).ready(function() {
       renderTweets(data);
     });
   };
-  
-  const $newTweet = $('.new-tweet');
+
+  const $newTweet = $(".new-tweet");
 
   $newTweet.submit(function(event) {
     event.preventDefault();
@@ -64,26 +61,22 @@ $(document).ready(function() {
     const $alert = $(this).find(".alert");
     if (chars === 140) {
       $alert.removeClass("hidden");
-      $alert.find('div').text("No tweet text entered!");
+      $alert.find("div").text("No tweet text entered!");
       event.stopImmediatePropagation();
     } else if (chars < 0) {
       $alert.removeClass("hidden");
-      $alert.find('div').text("Tweet over 140 characters!");
+      $alert.find("div").text("Tweet over 140 characters!");
       event.stopImmediatePropagation();
     } else {
       $alert.addClass("hidden");
       const serialized = $(event.target).serialize();
-      $.post('/tweets', serialized, res => {
-        $(event.target).parent().find('#tweet-text').val('');
-        $(event.target.counter).val('140');
+      $.post("/tweets", serialized, (res) => {
+        $(event.target).parent().find("#tweet-text").val("");
+        $(event.target.counter).val("140");
         loadTweets();
       });
-      
     }
   });
- 
+
   loadTweets();
-  
 });
-
-
